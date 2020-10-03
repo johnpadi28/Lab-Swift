@@ -8,9 +8,27 @@
 import UIKit
 
 class pizzaDetailViewController: UIViewController {
+    
+    var imageName = ""
+    var pizzaName = ""
+    var pizzaStyle = ""
+    var pizzaPrice = ""
+    
 
+    @IBOutlet var pizzaImageName: UIImageView!
+    @IBOutlet var pizzaNameLabel: UILabel!
+    @IBOutlet var pizzaStyleLabel: UILabel!
+    @IBOutlet var pizzaPriceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pizzaImageName.image = UIImage(named: imageName)
+        pizzaNameLabel.text = pizzaName
+        pizzaStyleLabel.text = pizzaStyle
+        pizzaPriceLabel.text = pizzaPrice
+        
+        navigationItem.largeTitleDisplayMode = .never
 
         // Do any additional setup after loading the view.
     }

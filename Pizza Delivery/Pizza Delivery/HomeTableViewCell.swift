@@ -8,7 +8,19 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var styleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
+    @IBOutlet var pizzaImage: UIImageView!{
+        didSet{
+            pizzaImage.layer.cornerRadius = pizzaImage.bounds.width / 2
+            pizzaImage.clipsToBounds = true
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
