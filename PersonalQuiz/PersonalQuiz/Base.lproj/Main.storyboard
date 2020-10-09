@@ -1,24 +1,455 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ah3-o7-aFT">
+                                <rect key="frame" x="20" y="377" width="374" height="142.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Animal Are You?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnE-Ec-hCn">
+                                        <rect key="frame" x="5" y="0.0" width="364.5" height="47.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-lb-4Y2">
+                                        <rect key="frame" x="62" y="62.5" width="250" height="80"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="jqf-Oh-DHx"/>
+                                            <constraint firstAttribute="height" constant="80" id="ljp-GE-3Oe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="36"/>
+                                        <state key="normal" title="Begin Quiz">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="8LY-fo-6T5" kind="show" id="1mb-Fd-EiJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🐶" translatesAutoresizingMaskIntoConstraints="NO" id="ruo-94-UC2">
+                                <rect key="frame" x="20" y="44" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SSH-OZ-cj3"/>
+                                    <constraint firstAttribute="width" constant="50" id="sgZ-v2-zTJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🐱" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-nY-1uM">
+                                <rect key="frame" x="344" y="44" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UTT-eA-R3F"/>
+                                    <constraint firstAttribute="width" constant="50" id="geQ-4f-7mu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🐰" translatesAutoresizingMaskIntoConstraints="NO" id="q0v-LP-C64">
+                                <rect key="frame" x="20" y="812" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Z16-mT-wSS"/>
+                                    <constraint firstAttribute="height" constant="50" id="qUG-IJ-lCW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🐢" translatesAutoresizingMaskIntoConstraints="NO" id="34C-eF-R2P">
+                                <rect key="frame" x="344" y="812" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cx9-ls-jfP"/>
+                                    <constraint firstAttribute="width" constant="50" id="zTi-Bc-5Y5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.9744092822" green="0.70610475539999995" blue="0.21088728309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q0v-LP-C64" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5ic-C4-tEb"/>
+                            <constraint firstItem="Ah3-o7-aFT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7zC-0U-JzZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hmi-nY-1uM" secondAttribute="trailing" constant="20" id="84z-AV-P0g"/>
+                            <constraint firstItem="ruo-94-UC2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G7Z-cz-oGt"/>
+                            <constraint firstItem="Hmi-nY-1uM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ruo-94-UC2" secondAttribute="trailing" id="I5j-eK-BUW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="34C-eF-R2P" secondAttribute="trailing" constant="20" id="MDG-oG-Tny"/>
+                            <constraint firstItem="Ah3-o7-aFT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="OBh-az-xSp"/>
+                            <constraint firstItem="Hmi-nY-1uM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tmb-Qz-rLx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ah3-o7-aFT" secondAttribute="trailing" constant="20" id="Y2H-ph-qAl"/>
+                            <constraint firstItem="q0v-LP-C64" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h5X-ln-9s9"/>
+                            <constraint firstItem="34C-eF-R2P" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="q0v-LP-C64" secondAttribute="trailing" id="hBE-lB-teL"/>
+                            <constraint firstItem="ruo-94-UC2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hSm-N8-VAu"/>
+                            <constraint firstItem="34C-eF-R2P" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iEC-MJ-o9Z"/>
+                            <constraint firstItem="Ah3-o7-aFT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lqe-gf-3Lm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="xGT-LC-cYL">
+            <objects>
+                <viewController id="LOC-Si-EJn" customClass="QuestionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1U-cg-Lq4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u49-yI-xuI">
+                                <rect key="frame" x="20" y="76" width="374" height="52.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RnI-wb-f8x">
+                                <rect key="frame" x="20" y="780" width="374" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="dJH-WB-cTr"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="0.95864146949999995" green="0.71351021530000003" blue="0.072453729810000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KIo-o3-RcX">
+                                <rect key="frame" x="90" y="285" width="234" height="272"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY9-yz-4rc">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="53"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="LOC-Si-EJn" eventType="touchUpInside" id="bCc-18-JMf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Yi-iEx">
+                                        <rect key="frame" x="0.0" y="73" width="234" height="53"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="LOC-Si-EJn" eventType="touchUpInside" id="Smg-Iq-RSL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-CJ-bJe">
+                                        <rect key="frame" x="0.0" y="146" width="234" height="53"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="LOC-Si-EJn" eventType="touchUpInside" id="dts-3P-Iyo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9e-ol-eO4">
+                                        <rect key="frame" x="0.0" y="219" width="234" height="53"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="LOC-Si-EJn" eventType="touchUpInside" id="7SF-K3-Nzh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6gl-R1-Gf4">
+                                <rect key="frame" x="89.5" y="254" width="235" height="334"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-D1-mgi">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcF-fK-f9L">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="41"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-hS-Rf0">
+                                                <rect key="frame" x="186" y="5" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-pU-bwx">
+                                        <rect key="frame" x="0.0" y="71" width="235" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-8l-txG">
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="31"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWq-Q1-cIa">
+                                                <rect key="frame" x="186" y="0.0" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vNW-XJ-gto">
+                                        <rect key="frame" x="0.0" y="132" width="235" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-AM-EOm">
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="31"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QCw-DD-yMy">
+                                                <rect key="frame" x="186" y="0.0" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="gTW-WF-Kt1">
+                                        <rect key="frame" x="0.0" y="193" width="235" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OQ-6P-Gs9">
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="31"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-3D-zvo">
+                                                <rect key="frame" x="186" y="0.0" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3r-n1-o7f">
+                                        <rect key="frame" x="0.0" y="254" width="235" height="80"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="3Ty-kQ-MYb"/>
+                                            <constraint firstAttribute="width" constant="235" id="dqV-tq-bbA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Submit Answer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="multipleanswerButtonPressed" destination="LOC-Si-EJn" eventType="touchUpInside" id="nZC-nm-DAb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fbs-NF-OgJ">
+                                <rect key="frame" x="50" y="331" width="314" height="180"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-Wg-i8q">
+                                        <rect key="frame" x="-2" y="0.0" width="318" height="31"/>
+                                        <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-i7-MHJ">
+                                        <rect key="frame" x="0.0" y="50" width="314" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeS-8r-eoy">
+                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHv-CY-3X5">
+                                                <rect key="frame" x="262.5" y="0.0" width="51.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6U-3s-rWX">
+                                        <rect key="frame" x="0.0" y="100" width="314" height="80"/>
+                                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="hHv-MJ-Xm6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="30"/>
+                                        <state key="normal" title="Submit Answer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed:" destination="LOC-Si-EJn" eventType="touchUpInside" id="rtN-qH-OVb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fJt-sg-XiE"/>
+                        <color key="backgroundColor" red="0.95864146949999995" green="0.71351021530000003" blue="0.072453729810000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6gl-R1-Gf4" firstAttribute="leading" secondItem="fJt-sg-XiE" secondAttribute="leading" constant="89.5" id="1XX-3N-h9x"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="trailing" secondItem="KIo-o3-RcX" secondAttribute="trailing" constant="90" id="H6E-lh-ky1"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="trailing" secondItem="fbs-NF-OgJ" secondAttribute="trailing" constant="50" id="IkI-xw-YQe"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="trailing" secondItem="RnI-wb-f8x" secondAttribute="trailing" constant="20" id="J3W-NL-6sQ"/>
+                            <constraint firstItem="fbs-NF-OgJ" firstAttribute="centerY" secondItem="P1U-cg-Lq4" secondAttribute="centerY" id="KfM-36-Yaz"/>
+                            <constraint firstItem="6gl-R1-Gf4" firstAttribute="top" secondItem="P1U-cg-Lq4" secondAttribute="top" constant="254" id="Kyj-et-gJK"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="trailing" secondItem="u49-yI-xuI" secondAttribute="trailing" constant="20" id="N8u-mR-rAx"/>
+                            <constraint firstItem="u49-yI-xuI" firstAttribute="leading" secondItem="fJt-sg-XiE" secondAttribute="leading" constant="20" id="WZC-Xh-W0f"/>
+                            <constraint firstItem="RnI-wb-f8x" firstAttribute="leading" secondItem="fJt-sg-XiE" secondAttribute="leading" constant="20" id="aCi-NG-5a0"/>
+                            <constraint firstItem="KIo-o3-RcX" firstAttribute="centerY" secondItem="P1U-cg-Lq4" secondAttribute="centerY" id="aFd-Fv-UtK"/>
+                            <constraint firstItem="fbs-NF-OgJ" firstAttribute="leading" secondItem="fJt-sg-XiE" secondAttribute="leading" constant="50" id="cU7-5G-Imi"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="bottom" secondItem="RnI-wb-f8x" secondAttribute="bottom" constant="20" id="dIW-d1-I44"/>
+                            <constraint firstItem="u49-yI-xuI" firstAttribute="top" secondItem="fJt-sg-XiE" secondAttribute="top" constant="20" id="kkV-FO-XcT"/>
+                            <constraint firstItem="6gl-R1-Gf4" firstAttribute="centerY" secondItem="P1U-cg-Lq4" secondAttribute="centerY" id="nRI-a4-UKO"/>
+                            <constraint firstItem="fJt-sg-XiE" firstAttribute="trailing" secondItem="6gl-R1-Gf4" secondAttribute="trailing" constant="89.5" id="rXa-eF-ZPB"/>
+                            <constraint firstItem="6gl-R1-Gf4" firstAttribute="centerX" secondItem="u49-yI-xuI" secondAttribute="centerX" id="vY0-hu-38B"/>
+                            <constraint firstItem="KIo-o3-RcX" firstAttribute="leading" secondItem="fJt-sg-XiE" secondAttribute="leading" constant="90" id="xp8-GO-RDl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MMd-Oy-mtl"/>
+                    <connections>
+                        <outlet property="multiLabel1" destination="IcF-fK-f9L" id="ru8-q5-MAu"/>
+                        <outlet property="multiLabel2" destination="Bf5-8l-txG" id="K7S-jw-lpm"/>
+                        <outlet property="multiLabel3" destination="qEp-AM-EOm" id="Bbi-Km-vgp"/>
+                        <outlet property="multiLabel4" destination="9OQ-6P-Gs9" id="wGe-9K-1Ik"/>
+                        <outlet property="multiSwitch1" destination="2WM-hS-Rf0" id="BBr-MD-hb9"/>
+                        <outlet property="multiSwitch2" destination="FWq-Q1-cIa" id="mJg-DB-93u"/>
+                        <outlet property="multiSwitch3" destination="QCw-DD-yMy" id="SDv-7l-kJA"/>
+                        <outlet property="multiSwitch4" destination="sLb-3D-zvo" id="G4B-Yx-4l0"/>
+                        <outlet property="multipleStackView" destination="6gl-R1-Gf4" id="pK4-7y-B7d"/>
+                        <outlet property="questionLabel" destination="u49-yI-xuI" id="w5B-bj-FPi"/>
+                        <outlet property="questionProgressView" destination="RnI-wb-f8x" id="BIe-zR-cUh"/>
+                        <outlet property="rangeLabel1" destination="QeS-8r-eoy" id="6Ty-hG-eTH"/>
+                        <outlet property="rangeLabel2" destination="dHv-CY-3X5" id="0oG-Rd-cd8"/>
+                        <outlet property="rangedSlider" destination="5Po-Wg-i8q" id="Nv3-pN-T4n"/>
+                        <outlet property="rangedStackView" destination="fbs-NF-OgJ" id="Qp2-un-P4m"/>
+                        <outlet property="singleButton1" destination="rY9-yz-4rc" id="EKf-uA-m0T"/>
+                        <outlet property="singleButton2" destination="RKd-Yi-iEx" id="xHx-Ia-Xv4"/>
+                        <outlet property="singleButton3" destination="Pqf-CJ-bJe" id="ISu-Kd-OPH"/>
+                        <outlet property="singleButton4" destination="t9e-ol-eO4" id="lYq-tJ-FLP"/>
+                        <outlet property="singleStackView" destination="KIo-o3-RcX" id="dM9-Va-ZMH"/>
+                        <segue destination="MYe-G8-r7q" kind="show" identifier="Results" destinationCreationSelector="showResults:" id="iXu-k2-uMD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDR-vI-emR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857.9710144927537" y="114.50892857142857"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="LzR-yp-gVH">
+            <objects>
+                <viewController id="MYe-G8-r7q" customClass="ResultsViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVX-8t-u1F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="L8K-Sy-a0D">
+                                <rect key="frame" x="20" y="366" width="374" height="110.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-nW-tCT">
+                                        <rect key="frame" x="128.5" y="0.0" width="117" height="68"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a97-y1-GsB">
+                                        <rect key="frame" x="163.5" y="83" width="47" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN-Bold" family="Devanagari Sangam MN" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18n-t3-Dea"/>
+                        <color key="backgroundColor" red="0.039371408519999998" green="0.75671261550000002" blue="0.92146694659999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L8K-Sy-a0D" firstAttribute="centerX" secondItem="XVX-8t-u1F" secondAttribute="centerX" id="3cg-qs-H2R"/>
+                            <constraint firstItem="18n-t3-Dea" firstAttribute="trailing" secondItem="L8K-Sy-a0D" secondAttribute="trailing" constant="20" id="P1Z-et-vhz"/>
+                            <constraint firstItem="L8K-Sy-a0D" firstAttribute="centerY" secondItem="XVX-8t-u1F" secondAttribute="centerY" id="qUw-3U-ZPf"/>
+                            <constraint firstItem="L8K-Sy-a0D" firstAttribute="leading" secondItem="18n-t3-Dea" secondAttribute="leading" constant="20" id="sEi-7W-xve"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="9g7-HV-fcn">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="h1f-8o-0T9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Ei7-cm-fex" kind="unwind" unwindAction="unwindToQuizIntroductionWithSegue:" id="wzm-hy-m5v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="ebo-nW-tCT" id="Fsr-2d-HOK"/>
+                        <outlet property="resultDefinitionLabel" destination="a97-y1-GsB" id="BCP-2R-zUM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="863-hj-fRI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ei7-cm-fex" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2668.1159420289855" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LWW-9A-EjD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8LY-fo-6T5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="u0U-3P-3SO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hwL-az-d41">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LOC-Si-EJn" kind="relationship" relationship="rootViewController" id="eAx-Di-Kep"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd3-YK-hir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="🐢" width="128" height="128"/>
+        <image name="🐰" width="128" height="128"/>
+        <image name="🐱" width="128" height="128"/>
+        <image name="🐶" width="128" height="128"/>
+    </resources>
 </document>
