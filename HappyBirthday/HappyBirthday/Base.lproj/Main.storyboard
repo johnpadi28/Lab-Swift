@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HappyBirthday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bhm-oZ-JY8">
+                                <rect key="frame" x="0.0" y="266" width="414" height="630"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="630" id="EX8-Wg-LhT"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dateButton" textLabel="46Z-jc-Yzf" style="IBUITableViewCellStyleDefault" id="e2M-df-cUw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e2M-df-cUw" id="uYR-dn-0tx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46Z-jc-Yzf">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePicker" rowHeight="232" id="5Yk-ae-Mf6" customClass="DatePickerTableViewCell" customModule="HappyBirthday" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="232"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Yk-ae-Mf6" id="bGC-Oc-sFV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="232"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q6I-ji-yL8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="232"/>
+                                                    <connections>
+                                                        <action selector="datePickerChangef:" destination="5Yk-ae-Mf6" eventType="valueChanged" id="RBg-4b-hqD"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q6I-ji-yL8" firstAttribute="leading" secondItem="bGC-Oc-sFV" secondAttribute="leading" id="O41-8O-N33"/>
+                                                <constraint firstAttribute="trailing" secondItem="q6I-ji-yL8" secondAttribute="trailing" id="XNM-IV-gKA"/>
+                                                <constraint firstAttribute="bottom" secondItem="q6I-ji-yL8" secondAttribute="bottom" id="bBW-VW-njJ"/>
+                                                <constraint firstItem="q6I-ji-yL8" firstAttribute="top" secondItem="bGC-Oc-sFV" secondAttribute="top" id="dOm-1c-Lto"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datePicker" destination="q6I-ji-yL8" id="sUd-GJ-ZHt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Birthday is: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDZ-NY-2Se">
+                                <rect key="frame" x="16" y="44" width="382" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="222" id="7nM-zU-raF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tDZ-NY-2Se" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DVL-qB-Ffn"/>
+                            <constraint firstAttribute="bottom" secondItem="Bhm-oZ-JY8" secondAttribute="bottom" id="F2e-uh-6mT"/>
+                            <constraint firstItem="tDZ-NY-2Se" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Iym-cD-Ugo"/>
+                            <constraint firstItem="Bhm-oZ-JY8" firstAttribute="top" secondItem="tDZ-NY-2Se" secondAttribute="bottom" id="XqP-pt-KPd"/>
+                            <constraint firstItem="Bhm-oZ-JY8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YiO-QT-b4E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tDZ-NY-2Se" secondAttribute="trailing" constant="16" id="jNy-by-cf3"/>
+                            <constraint firstItem="Bhm-oZ-JY8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yuS-jE-c8C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birthdateLabel" destination="tDZ-NY-2Se" id="13M-3N-WjI"/>
+                        <outlet property="tableView" destination="Bhm-oZ-JY8" id="NKe-0z-7kf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
